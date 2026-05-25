@@ -10,11 +10,15 @@ package org.example.singleton;
  * so basically its waste of memory if the class is not used, and can slow up a startup if the class is heavy task.
  */
 public class EagerSingleton {
+    // PRIVATE FIELD TO STORE CLASS OBJECT, SO THAT NO ONE CAN USE THIS OUTSIDE THE CLASS.
     private static EagerSingleton eagerSingleton = new EagerSingleton();
 
+    // PRIVATE CONSTRUCTOR, SO THAT NO ONE CAN CREATE ANOTHER OBJECT (DEFIES THE MEANING OF THE DESIGN PATTERN.)
     private EagerSingleton() {
     }
 
+    // STATIC METHOD TO GET OBJECT OF THIS CLASS (FACTORY METHOD).
+    // SO THAT THE CLIENTS GETS THE OBJECT THAT IS ALREADY CREATED WHEN THE CLASS WAS LOADED.
     public static EagerSingleton createEagerSingleton() {
         return eagerSingleton;
     }
