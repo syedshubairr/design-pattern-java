@@ -8,17 +8,18 @@ package org.example.singleton;
  * (because STATIC method doesn't need an object to be called) and that's the whole game.
  * 3. That static method we created is also called FACTORY METHOD (a method that returns the object of the class).
  */
-public class Dummy {
+public class LazySingleton {
     // PRIVATE FIELD TO STORE CLASS OBJECT, SO THAT NO ONE CAN USE THIS OUTSIDE THE CLASS.
-    private static Dummy dummy;
+    private static LazySingleton lazySingleton;
 
     // PRIVATE CONSTRUCTOR
-    private Dummy() {
+    private LazySingleton() {
     }
 
     // STATIC METHOD TO GET OBJECT OF THIS CLASS (FACTORY METHOD).
-    public static Dummy createDummy() {
-        if (dummy == null) dummy = new Dummy();
-        return dummy;
+    // THIS IS ALSO THE LAZY WAY OF CREATING AN OBJECT, MEANING THAT THE CLIENT WILL ONLY GET THE OBJECT WHEN IT'S NEEDED.
+    public static LazySingleton createLazySingleton() {
+        if (lazySingleton == null) lazySingleton = new LazySingleton();
+        return lazySingleton;
     }
 }
