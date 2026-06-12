@@ -11,8 +11,10 @@ public class LazySingletonMultiThreaded {
     private LazySingletonMultiThreaded() {
     }
 
-    //Option 1. use the synchronized block only on the object creation block, so that other logic in that code can be accessed by multiple threads
-    // if not needed to be thread safe.
+    /**
+     * Option 1. use the synchronized block only on the object creation block, so that other logic in that code can be accessed by multiple threads
+     * if not needed to be thread safe.
+     */
     public static LazySingletonMultiThreaded createLazySingletonMultithreaded() {
         synchronized (LazySingletonMultiThreaded.class) {
             if (lazySingletonMultiThreaded == null) {
@@ -22,8 +24,10 @@ public class LazySingletonMultiThreaded {
         return lazySingletonMultiThreaded;
     }
 
-    // Option 2. use synchronized method, but this will make the whole method to be accessed by only 1 thread and with that it will take more time,
-    // because what if the other code in the method is not needed to be thread safe, like if the other code is even accessed by multiple threads than is no problem.
+    /**
+     * Option 2. use synchronized method, but this will make the whole method to be accessed by only 1 thread and with that it will take more time,
+     * because what if the other code in the method is not needed to be thread safe, like if the other code is even accessed by multiple threads than is no problem.
+     */
 //    public static synchronized LazySingletonMultiThreaded createLazySingletonMultithreaded() {
     // some other code
     // using this option, the OTHER CODE will also one-thread at a time, but if this is not necessary like other threads can execute the
