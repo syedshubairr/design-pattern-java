@@ -1,4 +1,4 @@
-package org.example.singleton;
+package org.example.singleton.simple;
 
 /**
  * This is singleton design pattern class.

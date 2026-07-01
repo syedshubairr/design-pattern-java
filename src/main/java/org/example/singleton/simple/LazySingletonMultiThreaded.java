@@ -1,4 +1,4 @@
-package org.example.singleton;
+package org.example.singleton.simple;
 
 /**
  * This is for the singleton lazy but with MULTI-THREADING case.

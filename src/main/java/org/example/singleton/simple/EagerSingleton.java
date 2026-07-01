@@ -1,4 +1,4 @@
-package org.example.singleton;
+package org.example.singleton.simple;
 
 /**
  * This is Eager Singleton, it creates the objects when the class is loaded.

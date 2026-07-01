@@ -1,4 +1,4 @@
-package org.example.singleton;
+package org.example.singleton.simple;
 
 public class LazyMain {
     public static void main(String[] args) {
